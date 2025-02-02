@@ -4,6 +4,7 @@ import { Product, ProductProps } from "@/app/types/product";
 import { formatPrice } from "@/helpers/price";
 import Button from "@/components/Common/Button";
 import StarRating from "@/components/StarRating";
+import { useModalContext } from "@/contexts/modal/modal-context";
 
 const ProductCard = ({ product }: ProductProps) => {
   const {
@@ -14,7 +15,11 @@ const ProductCard = ({ product }: ProductProps) => {
     rating: { rate, count },
   } = product;
 
-  const handleAddToCart = (productId: number) => {};
+  const { dispatch: modalDispatch } = useModalContext();
+
+  const handleAddToCart = () => {
+    modalDispatch({ type: "modal/open", payload: "cart" });
+  };
 
   return (
     <li className="flex flex-col gap-5 pt-5 pb-5 mb-5 last:mb-0">
@@ -42,7 +47,7 @@ const ProductCard = ({ product }: ProductProps) => {
       <Button
         variant="primary"
         label="Add to Cart"
-        onClick={() => handleAddToCart(product.id)}
+        onClick={() => handleAddToCart()}
       >
         Add to Cart
       </Button>
