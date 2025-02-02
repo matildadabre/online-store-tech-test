@@ -1,35 +1,14 @@
-import ProductCard from "../ProductCard";
+import ProductCard from "@/components/ProductCard";
+import { Product } from "@/app/types/product";
 
-const ProductList = async () => {
-  /* Mock data to be replace by API call */
-  const products = [
-    {
-      id: 1,
-      title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-      price: 109.95,
-      description:
-        "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-      category: "men's clothing",
-      image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-      rating: {
-        rate: 3.9,
-        count: 120,
-      },
-    },
-    {
-      id: 2,
-      title: "Laptops",
-      price: 109.95,
-      description:
-        "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-      category: "men's clothing",
-      image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-      rating: {
-        rate: 3.9,
-        count: 120,
-      },
-    },
-  ];
+type ProductListProps = {
+  products: Product[];
+};
+
+const ProductList = ({ products }: ProductListProps) => {
+  if (!products || products.length === 0) {
+    return <div>No products available</div>;
+  }
 
   return (
     <ul>

@@ -1,19 +1,5 @@
 import Image from "next/image";
-
-type ProductProps = {
-  product: {
-    id: number;
-    title: string;
-    price: number;
-    description: string;
-    category: string;
-    image: string;
-    rating: {
-      rate: number;
-      count: number;
-    };
-  };
-};
+import { ProductProps } from "@/app/types/product";
 
 const ProductCard = ({ product }: ProductProps) => {
   const {
