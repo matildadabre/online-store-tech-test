@@ -7,7 +7,7 @@ const StarRating = ({ rate }: StarRatingProps) => {
   const emptyStars = 5 - fullStars;
 
   return (
-    <div className="flex gap-[0.5rem]">
+    <div className="flex gap-[0.2rem]">
       {[...Array(fullStars)].map((_, index) => (
         <span key={index} className="text-[#ffbc0b]">
           ★
