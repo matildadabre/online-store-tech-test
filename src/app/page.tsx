@@ -7,7 +7,7 @@ const Home = async () => {
   const products: Product[] = await fetchProducts();
 
   return (
-    <main className="max-w-3xl mx-auto py-5">
+    <main className="max-w-3xl mx-auto p-[19.5px]">
       <h1 className="font-bold text-2xl leading-7">Fake Products</h1>
       <ProductList products={products} />
     </main>
