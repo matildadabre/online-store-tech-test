@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Product, ProductProps } from "@/app/types/product";
 import { formatPrice } from "@/helpers/price";
 import Button from "@/components/Common/Button";
+import StarRating from "@/components/StarRating";
 
 const ProductCard = ({ product }: ProductProps) => {
   const {
@@ -16,7 +17,7 @@ const ProductCard = ({ product }: ProductProps) => {
   const handleAddToCart = (productId: number) => {};
 
   return (
-    <li className="flex flex-col gap-5 p-5">
+    <li className="flex flex-col gap-5 pt-5 pb-5 mb-5 last:mb-0">
       <div className="relative flex justify-center items-center w-full border border-[#E5E7EB] rounded-[10px] h-[285px]">
         <Image
           src={product.image}
@@ -34,12 +35,17 @@ const ProductCard = ({ product }: ProductProps) => {
         <div className="text-lg leading-[22px] font-medium">
           {formatPrice(price)}
         </div>
+        <div className="flex items-center gap-1">
+          <StarRating rate={Math.floor(rate)} /> <span>({count})</span>
+        </div>
       </div>
       <Button
         variant="primary"
         label="Add to Cart"
         onClick={() => handleAddToCart(product.id)}
-      />
+      >
+        Add to Cart
+      </Button>
     </li>
   );
 };
