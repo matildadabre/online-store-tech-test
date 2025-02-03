@@ -1,4 +1,4 @@
-import { Product } from "@/app/types/product";
+import { Product } from "@/types/product";
 import { CartStateType, initialStateCart } from "./cartContext";
 
 type AddItemsType = {

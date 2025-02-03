@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { Product, ProductProps } from "@/app/types/product";
+import { Product, ProductProps } from "@/types/product";
 import { formatPrice } from "@/helpers/price";
 import Button from "@/components/Common/Button";
 import StarRating from "@/components/StarRating";

@@ -3,7 +3,7 @@
 import { createContext, useReducer, useContext, useEffect } from "react";
 import cartReducer, { type CartActionType } from "./cartContextReducer";
 
-import type { Product } from "@/app/types/product";
+import type { Product } from "@/types/product";
 import {
   saveToLocalStorage,
   loadFromLocalStorage,

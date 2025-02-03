@@ -1,6 +1,6 @@
 import ProductList from "@/components/ProductList";
 import { fetchProducts } from "@/app/api/api-product";
-import { Product } from "@/app/types/product";
+import { Product } from "@/types/product";
 
 const Home = async () => {
   // Fetch a list of products from the API and store them in the products array.
