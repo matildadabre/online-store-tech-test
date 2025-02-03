@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/PageHeader";
 import Footer from "@/components/PageFooter";
-import { ModalProvider } from "@/contexts/modal/modal-context";
+import { CartProvider } from "@/contexts/Cart/cartContext";
+import { ModalProvider } from "@/contexts/Modal/modalContext";
 
 export const metadata: Metadata = {
   title: "Demo Store",
@@ -17,11 +18,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ModalProvider>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </ModalProvider>
+        <CartProvider>
+          <ModalProvider>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </ModalProvider>
+        </CartProvider>
       </body>
     </html>
   );

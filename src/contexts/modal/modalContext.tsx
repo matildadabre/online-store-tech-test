@@ -1,21 +1,17 @@
 "use client";
 
 import { createContext, useReducer, useContext } from "react";
-import modalReducer, { type ModalActionType } from "./modal-context-reducer";
 
-// Types related to the modal context
-type ModalContextType = ModalStateType & {
-  dispatch: React.Dispatch<ModalActionType>;
-};
-type ModalProviderProps = { children: React.ReactNode };
-export type ModalHeadingType =
-  | "cart"
-  | "checkout"
-  | "order confirmation"
-  | null;
-export type ModalStateType = {
-  heading: ModalHeadingType;
-  isOpen: boolean;
+import {
+  ModalContextType,
+  ModalProviderProps,
+  ModalStateType,
+} from "@/types/modalTypes";
+import modalReducer, { ModalActionType } from "./modalContextReducer";
+
+const initialState: ModalStateType = {
+  heading: null,
+  isOpen: false,
 };
 
 const initialStateModal: ModalStateType = {

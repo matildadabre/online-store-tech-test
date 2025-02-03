@@ -1,4 +1,4 @@
-import type { ModalStateType } from "./modal-context";
+import type { ModalStateType } from "@/types/modalTypes";
 
 type ModalCloseActionType = {
   type: "modal/close";

@@ -4,7 +4,8 @@ import { Product, ProductProps } from "@/app/types/product";
 import { formatPrice } from "@/helpers/price";
 import Button from "@/components/Common/Button";
 import StarRating from "@/components/StarRating";
-import { useModalContext } from "@/contexts/modal/modal-context";
+import { useModalContext } from "@/contexts/Modal/modalContext";
+import { useCartContext } from "@/contexts/Cart/cartContext";
 
 const ProductCard = ({ product }: ProductProps) => {
   const {
@@ -16,8 +17,10 @@ const ProductCard = ({ product }: ProductProps) => {
   } = product;
 
   const { dispatch: modalDispatch } = useModalContext();
+  const { dispatch: cartDispatch } = useCartContext();
 
   const handleAddToCart = () => {
+    cartDispatch({ type: "cart/addItems", payload: product });
     modalDispatch({ type: "modal/open", payload: "cart" });
   };
 
