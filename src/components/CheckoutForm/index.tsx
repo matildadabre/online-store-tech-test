@@ -1,5 +1,5 @@
 import CheckoutFormRow from "@/components/CheckoutForm/CheckoutFormRow";
-import type { ErrorsType } from "@/hooks/useOrderFormHandler";
+import { ErrorsType } from "@/types/errorTypes";
 
 type inputFieldListType = {
   labelText: string;
