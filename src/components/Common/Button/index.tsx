@@ -15,7 +15,12 @@ const Button = ({
   disabled,
   onClick,
 }: Props): JSX.Element => {
-  const bgColor = variant === "primary" ? "bg-[#4F46E5]" : "bg-[#16A34A]";
+  const bgColor =
+    variant === "primary"
+      ? "bg-[#4F46E5]"
+      : variant === "secondary"
+      ? "bg-[#16A34A]"
+      : "bg-black";
 
   return (
     <button
