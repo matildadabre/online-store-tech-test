@@ -5,9 +5,16 @@ interface Props {
   label?: string;
   onClick?: () => void;
   variant?: "primary" | "secondary";
+  disabled?: boolean;
 }
 
-const Button = ({ label, children, variant, onClick }: Props): JSX.Element => {
+const Button = ({
+  label,
+  children,
+  variant,
+  disabled,
+  onClick,
+}: Props): JSX.Element => {
   const bgColor = variant === "primary" ? "bg-[#4F46E5]" : "bg-[#16A34A]";
 
   return (
@@ -15,6 +22,7 @@ const Button = ({ label, children, variant, onClick }: Props): JSX.Element => {
       className={`flex items-center justify-center w-full rounded-[10px] gap-2 p-2 ${bgColor} text-white`}
       aria-label={label}
       title={label}
+      disabled={disabled}
       onClick={onClick}
     >
       {children}
