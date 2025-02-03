@@ -1,9 +1,10 @@
 "use client";
 
-import { useModalContext } from "@/contexts/modal/modal-context";
+import { useModalContext } from "@/contexts/Modal/modalContext";
 import Image from "next/image";
 import Link from "next/link";
 import Modal from "../Common/Modal";
+import CartButton from "../Common/CartButton";
 
 const headerStyles = {
   container:
@@ -20,6 +21,9 @@ const Header = () => {
         <Link href="/">
           <Image src="/logo.svg" alt="demo" width={20} height={25} />
         </Link>
+        <div className="flex items-center gap-2">
+          <CartButton />
+        </div>
       </div>
     </header>
   );
