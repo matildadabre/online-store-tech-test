@@ -8,8 +8,13 @@ type ModalContextType = ModalStateType & {
   dispatch: React.Dispatch<ModalActionType>;
 };
 type ModalProviderProps = { children: React.ReactNode };
+export type ModalHeadingType =
+  | "cart"
+  | "checkout"
+  | "order confirmation"
+  | null;
 export type ModalStateType = {
-  heading: "cart" | "checkout" | null;
+  heading: ModalHeadingType;
   isOpen: boolean;
 };
 

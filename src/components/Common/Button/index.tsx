@@ -12,7 +12,7 @@ const Button = ({ label, children, variant, onClick }: Props): JSX.Element => {
 
   return (
     <button
-      className={`flex items-center justify-center rounded-[10px] gap-2 p-2 ${bgColor} text-white`}
+      className={`flex items-center justify-center w-full rounded-[10px] gap-2 p-2 ${bgColor} text-white`}
       aria-label={label}
       title={label}
       onClick={onClick}
