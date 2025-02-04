@@ -3,7 +3,7 @@ import { fetchProducts } from "@/app/api/api-product";
 import { Product } from "@/types/product";
 
 const Home = async () => {
-  // Fetch a list of products from the API and store them in the products array.
+  // The data fetching occurs on the server side, Fetch a list of products from the API and store them in the products array.
   const products: Product[] = await fetchProducts();
 
   return (

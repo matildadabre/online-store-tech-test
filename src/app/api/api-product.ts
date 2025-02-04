@@ -4,7 +4,7 @@
  */
 export const fetchProducts = async () => {
   try {
-    const res = await fetch(`https://fakestoreapi.com/products`);
+    const res = await fetch(`https://fakestoreapi.com/products`); // to be moved to .env
     if (!res.ok) {
       throw new Error(`Failed to fetch products: ${res.statusText}`);
     }
